@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation_201_TestSuite-Cucumber framework">
+	<!-- Suite -->
+	<test name="Cucumber Tests">
+		<classes>
+			<class name="stepdefinitions.Runner" />
+		</classes>
+	</test>
+	<!-- Test -->
+</suite>

@@ -1,0 +1,1902 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+	<style type='text/css'>
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Mar 22, 2019 02:23:02 AM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.2</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@airasia</a></li>
+					<li><a href='#'>@flight</a></li>
+					<li><a href='#'>@login</a></li>
+					<li><a href='#'>@automation_practice</a></li>
+					<li><a href='#'>@travel</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='66.667%'><span class='strong'>2</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='93.333%'><span class='strong'>14</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='6.667%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='99.561%'><span class='strong'>227</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0.439%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Air Asia Flight search and Login</span>
+						<span class='test-time'>Mar 22, 2019 02:23:02 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@flight</span>
+	</div>
+	<span class='duration right label'>0h 0m 22s+403ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User is able to search flights between two locations</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given User is navigated successfully to the website</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User clicks on the Flights Icon</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User enters origin as "Bengaluru(BLR)"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='6' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User enters destination as "Pune"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='7' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User selects depart date as "15/12/2018"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='8' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User selects return date as "One Way"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='9' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User clicks on Search button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='10' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then User should be navigated to the search flight page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='11' status='pass'>
+	<div class='category-list'>
+		<span class='category label white-text'>@login</span>
+	</div>
+	<span class='duration right label'>0h 0m 12s+722ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">User is able to the Website</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='12' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given User is navigated successfully to the website</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='13' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User clicks on the login button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='14' class='node when pass' status='pass'>
+			
+			<b>When</b>
+			
+			<span class="bdd-step-name">When User enters username as "a@gmail.com"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='15' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User enters password as "India1234"</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='16' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And User clicks on Sign In button</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='17' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then Error message is displayed on screen in red and contains the text "Your log in attempts has been unsuccessful."</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>User Registration for Automation Practices</span>
+						<span class='test-time'>Mar 22, 2019 02:23:41 AM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='19' status='pass'>
+	<span class='duration right label'>0h 1m 19s+576ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Users are able to register successfully</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='20' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@automation_practice</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register successfully</span>
+			
+				<ul class='steps'>
+					<li test-id='21' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is on the homepage of Automation practices website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='22' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks Sign In button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='23' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters a valid "test7@aut.com" in the account box</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='24' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Create an Account button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='25' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User is navigated to the registration page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='26' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User selects "Mr." radiobox</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='27' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname "Tester"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='28' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname "Autom"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='29' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enter password "TestAut1"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='30' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects date "12" , month "December" and year "1993" of birth</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='31' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address "TestAdd1"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='32' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='33' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country "United States"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='34' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects state "Alabama"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='35' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code "90872"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='36' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters mobile phone "9087654321"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='37' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Register button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='38' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User should be registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='39' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@automation_practice</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register successfully</span>
+			
+				<ul class='steps'>
+					<li test-id='40' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is on the homepage of Automation practices website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='41' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks Sign In button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='42' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters a valid "test8@aut.com" in the account box</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='43' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Create an Account button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='44' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User is navigated to the registration page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='45' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User selects "Mrs." radiobox</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='46' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname "Testerr"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='47' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname "Autom"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='48' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enter password "TestAut2"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='49' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects date "14" , month "February" and year "1994" of birth</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='50' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address "TestAdd2"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='51' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city "Kolkata"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='52' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country "United States"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='53' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects state "Colorado"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='54' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code "90873"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='55' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters mobile phone "9087654322"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='56' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Register button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='57' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User should be registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='58' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@automation_practice</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register successfully</span>
+			
+				<ul class='steps'>
+					<li test-id='59' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is on the homepage of Automation practices website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='60' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks Sign In button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='61' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters a valid "test9@aut.com" in the account box</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='62' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Create an Account button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='63' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User is navigated to the registration page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='64' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User selects "Mr." radiobox</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='65' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname "Testrrr"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='66' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname "Autom"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='67' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enter password "TestAut3"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='68' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects date "15" , month "March" and year "1995" of birth</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='69' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address "TestAdd3"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='70' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city "Mumbai"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='71' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country "United States"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='72' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects state "Florida"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='73' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code "90874"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='74' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters mobile phone "9087654323"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='75' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Register button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='76' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then User should be registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='77'>
+					<div class='test-heading'>
+						<span class='test-name'>User Registration for Newtours</span>
+						<span class='test-time'>Mar 22, 2019 02:25:01 AM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='78' status='fail'>
+	<span class='duration right label'>0h 1m 52s+290ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Users are able to register</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='79' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='80' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='81' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='82' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test111"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='83' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom111"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='84' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654321"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='85' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test1@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='86' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add1"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='87' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='88' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='89' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='90' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='91' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut1"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='92' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut1"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='93' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut1" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='94' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='95' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='96' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='97' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='98' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='99' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test112"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='100' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom112"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='101' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654322"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='102' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test2@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='103' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add2"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='104' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='105' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='106' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='107' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='108' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut2"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='109' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut2"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='110' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut2" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='111' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='112' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'><textarea>junit.framework.ComparisonFailure: expected:<[Register: Mercury Tours]> but was:<[newtours.demoaut.com]>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at stepdefinitions.NewtourTravelSteps.user_is_registered_successfully(NewtourTravelSteps.java:135)
+	at ?.Then user is registered successfully(newtourtravel.feature:21)
+</textarea></div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='113' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='114' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='115' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='116' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test113"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='117' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom113"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='118' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654323"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='119' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test3@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='120' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add3"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='121' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='122' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='123' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='124' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='125' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut3"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='126' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut3"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='127' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut3" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='128' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='129' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='130' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='131' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='132' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='133' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test114"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='134' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom114"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='135' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654324"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='136' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test4@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='137' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add4"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='138' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='139' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='140' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='141' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='142' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut4"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='143' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut4"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='144' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut4" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='145' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='146' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='147' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='148' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='149' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='150' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test115"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='151' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom115"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='152' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654325"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='153' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test5@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='154' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add5"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='155' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='156' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='157' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='158' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='159' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut5"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='160' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut5"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='161' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut5" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='162' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='163' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='164' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='165' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='166' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='167' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test116"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='168' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom116"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='169' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654326"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='170' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test6@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='171' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add6"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='172' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='173' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='174' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='175' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='176' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut6"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='177' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut6"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='178' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut6" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='179' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='180' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='181' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='182' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='183' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='184' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test117"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='185' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom117"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='186' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654327"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='187' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test7@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='188' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add7"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='189' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='190' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='191' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='192' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='193' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut7"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='194' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut7"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='195' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut7" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='196' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='197' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='198' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='199' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='200' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='201' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test118"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='202' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom118"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='203' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654328"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='204' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test8@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='205' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add8"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='206' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='207' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='208' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='209' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='210' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut8"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='211' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut8"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='212' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut8" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='213' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='214' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='215' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='216' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='217' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='218' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test119"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='219' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom119"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='220' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654329"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='221' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test9@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='222' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add9"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='223' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='224' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='225' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='226' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='227' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut9"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='228' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut9"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='229' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut9" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='230' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='231' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='232' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@travel</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Users are able to register</span>
+			
+				<ul class='steps'>
+					<li test-id='233' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given User is navigated to the homepage of the website</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='234' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When User clicks on the register link</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='235' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters firstname as "Test110"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='236' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters lastname as "Autom110"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='237' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters phone as "9087654320"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='238' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters email as "test0@aut.com"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='239' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters address as "test add0"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='240' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters city as "Bengaluru"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='241' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters state as "Karnataka"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='242' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters postal code as "560059"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='243' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User selects country as "India"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='244' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters username "TestAut10"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='245' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters password "TestAut10"</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='246' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User enters same "TestAut10" in confirm password field</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='247' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And User clicks on Submit</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='248' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then user is registered successfully</span>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@airasia</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 22, 2019 02:23:02 AM</td>
+										<td class='linked' test-id='1'>Air Asia Flight search and Login</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@flight</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 22, 2019 02:23:02 AM</td>
+										<td class='linked' test-id='2'>Air Asia Flight search and Login.User is able to search flights between two locations</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@login</span>
+						<span class='category-status right'>
+							<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 22, 2019 02:23:27 AM</td>
+										<td class='linked' test-id='11'>Air Asia Flight search and Login.User is able to the Website</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@automation_practice</span>
+						<span class='category-status right'>
+							<span class='label pass'>4</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 4</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 22, 2019 02:23:41 AM</td>
+										<td class='linked' test-id='18'>User Registration for Automation Practices</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:23:41 AM</td>
+										<td class='linked' test-id='20'>User Registration for Automation Practices.Users are able to register successfully.Users are able to register successfully</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:24:06 AM</td>
+										<td class='linked' test-id='39'>User Registration for Automation Practices.Users are able to register successfully.Users are able to register successfully</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:24:35 AM</td>
+										<td class='linked' test-id='58'>User Registration for Automation Practices.Users are able to register successfully.Users are able to register successfully</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@travel</span>
+						<span class='category-status right'>
+							<span class='label pass'>9</span>
+							<span class='label fail'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 9</span>
+							<span class='label red lighten-1 white-text'>Failed: 2</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Mar 22, 2019 02:25:01 AM</td>
+										<td class='linked' test-id='77'>User Registration for Newtours</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:01 AM</td>
+										<td class='linked' test-id='79'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:12 AM</td>
+										<td class='linked' test-id='96'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:23 AM</td>
+										<td class='linked' test-id='113'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:34 AM</td>
+										<td class='linked' test-id='130'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:45 AM</td>
+										<td class='linked' test-id='147'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:25:56 AM</td>
+										<td class='linked' test-id='164'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:26:08 AM</td>
+										<td class='linked' test-id='181'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:26:19 AM</td>
+										<td class='linked' test-id='198'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:26:31 AM</td>
+										<td class='linked' test-id='215'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Mar 22, 2019 02:26:42 AM</td>
+										<td class='linked' test-id='232'>User Registration for Newtours.Users are able to register.Users are able to register</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>junit.framework.ComparisonFailure</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Mar 22, 2019 02:25:22 AM</td>
+                                                        <td class='linked' test-id='112'>User Registration for Newtours.Users are able to register.Users are able to register.Then user is registered successfully</td>
+                                                        <td><pre><textarea>junit.framework.ComparisonFailure: expected:<[Register: Mercury Tours]> but was:<[newtours.demoaut.com]>
+	at junit.framework.Assert.assertEquals(Assert.java:100)
+	at junit.framework.Assert.assertEquals(Assert.java:107)
+	at stepdefinitions.NewtourTravelSteps.user_is_registered_successfully(NewtourTravelSteps.java:135)
+	at ?.Then user is registered successfully(newtourtravel.feature:21)
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>15</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>228</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 22, 2019 02:23:02 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 22, 2019 02:26:54 AM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>231,754ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@airasia</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@flight</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@login</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@automation_practice</td>
+							<td>4</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@travel</td>
+							<td>9</td>
+							<td>2</td>
+							<td>0</td>
+							<td>
+									81.818%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 2,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 14,
+				failChild: 1,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 1,
+				
+				passGrandChild: 227,
+				failGrandChild: 1,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 1,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
